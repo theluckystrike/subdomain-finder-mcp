@@ -38,6 +38,6 @@ used for testing.
 ## Cross-check
 
 The expected host counts, first and last seen dates, certificate counts and issuers in `test/core.test.mjs`
-were computed a second time by a separate Python script over the same fixtures, sharing no code with
-`src/core.ts`. Both agree: example.com 7 hosts, 12 out-of-scope SANs, www.example.com 15 certificates
+were computed a second time by `scripts/xcheck_ct.py`, a separate Python script that shares no code with
+`src/core.ts` (run: `python3 scripts/xcheck_ct.py test/fixtures/crtsh-example.json example.com`). Both agree: example.com 7 hosts, 12 out-of-scope SANs, www.example.com 15 certificates
 from 2014-11-06 to 2025-12-02; abwex.com 12 certificates, www.abwex.com 3.
